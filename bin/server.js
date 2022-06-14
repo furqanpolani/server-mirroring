@@ -66,6 +66,21 @@ var processRequest = function(request, response, data, files)
 		'Access-Control-Expose-Headers': ALLOW_RESPONSE_HEADERS.join(', ')
 	};
 
+	if (files) {
+		var headerFiles = [];
+		for (var file in files) {
+			if (files.hasOwnProperty(file)) {
+				headerFiles.push({
+					name: file,
+					file: files[file]
+				});
+			}
+		}
+
+		if (headerFiles.length) {
+			headers['X-Mirror-Files'] = JSON.stringify(headerFiles);
+		}
+	}
 
 	response.writeHead(parseInt(statusCode), headers);
 
