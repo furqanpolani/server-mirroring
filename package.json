@@ -1,0 +1,29 @@
+{
+	"name": "server-mirroring",
+	"description": "Mirroring for testing",
+	"version": "0.0.7",
+	"license": "MIT",
+	"bin": "./bin/server.js",
+	"main": "./src/server.js",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:furqanpolani/server-mirroring.git"
+	},
+	"author": {
+		"name": "Furqan Polani",
+		"email": "furqan.polani11@gmail.com"
+	},
+	"dependencies": {
+		"yargs": ">=4.2.0",
+		"colors": ">=1.1.2",
+		"busboy": "~0.2.12"
+	},
+	"devDependencies": {
+		"mocha": "~2.4.5",
+		"chai": "~3.5.0",
+		"request": "~2.69.0"
+	},
+	"scripts": {
+		"test": "mocha ./tests/tests.js"
+	}
+}
